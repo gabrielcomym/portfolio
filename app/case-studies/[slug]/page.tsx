@@ -83,7 +83,7 @@ export default async function CaseStudyPage({
           <RivendellCaseSections sections={study.sections} />
         ) : null}
 
-        <section className="mt-[var(--space-case-summary-top)] mb-[var(--space-case-summary-bottom)] grid grid-cols-1 gap-16 md:grid-cols-12 md:gap-6">
+        <section className="my-[var(--space-case-summary)] grid grid-cols-1 gap-16 md:grid-cols-12 md:gap-6">
           <div data-scroll-reveal="copy" className="flex flex-col gap-[23px] md:col-span-5">
             <h2 className="text-heading-sm text-ink">Project Description</h2>
             <div className="flex flex-col gap-6">

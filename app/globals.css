@@ -70,8 +70,7 @@
   --space-case-section-title-top: 15.625rem; /* 250 */
   --space-case-section-title-bottom: 27.0625rem; /* 433 */
   --space-case-section-title-gap: 2rem;
-  --space-case-summary-top: calc(var(--space-case-section-before-title) + var(--space-case-section-title-top));
-  --space-case-summary-bottom: var(--space-case-section-title-bottom);
+  --space-case-summary: var(--space-case-rhythm-large);
 
   /* ---- Motion ---- */
   --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
