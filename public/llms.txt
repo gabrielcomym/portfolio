@@ -1,0 +1,25 @@
+# Comym
+
+> Portfolio of Gabriel Comym, a product design leader working across AI, data, expert workflows, and complex technical products.
+
+## Profile
+
+- Name: Gabriel Comym
+- Role: Product Design Leader
+- Expertise: product design, design direction, AI and machine-learning workflows, data products, technical and enterprise UX, systems thinking, product strategy, and creative technology.
+- About: https://comym.co/about/
+- Contact: mailto:gabrielcomym@gmail.com
+- Insights: https://gabrielcomym.medium.com/
+
+## Selected work
+
+- [Kedro](https://comym.co/case-studies/kedro/): Product design and design direction for a mature open-source and enterprise data-science product experience, including Kedro-Viz.
+- [Rivendell](https://comym.co/case-studies/rivendell/): A prescriptive-analytics planning concept for a mineral-export port operation, designed as a human-in-the-loop decision-support experience.
+- [WovenLight](https://comym.co/case-studies/wovenlight/): AI-assisted workflows for high-stakes investment analysis and private-equity value creation.
+- [PerformanceAI](https://comym.co/case-studies/performanceai/): A 0-to-1 product vision for machine-learning model monitoring, alerts, comparison, and corrective action.
+
+## Canonical resources
+
+- Homepage: https://comym.co/
+- Sitemap: https://comym.co/sitemap.xml
+- Extended portfolio content: https://comym.co/llms-full.txt

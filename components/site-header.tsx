@@ -2,8 +2,7 @@ import Link from 'next/link'
 import { Container } from '@/components/layout/container'
 
 export const GLOBAL_NAV_LINKS = [
-  { label: 'Insights', href: 'https://gabrielcomym.medium.com/', external: true },
-  { label: 'About', href: '/about' },
+  { label: 'About', href: '/about', external: false },
 ]
 
 /**

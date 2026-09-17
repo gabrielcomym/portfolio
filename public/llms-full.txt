@@ -1,0 +1,105 @@
+# Gabriel Comym / Comym
+
+## Profile
+
+Gabriel Comym is a product design leader with 20+ years of experience across product design, design direction, and digital transformation. His work sits between strategy, UX, systems thinking, and hands-on design. He helps teams turn technical possibilities, early ideas, and business goals into clearer products, workflows, and digital experiences.
+
+The portfolio focuses on technical domains where AI, data, expert workflows, and complex systems need to become clear, trusted, and usable.
+
+### Areas of expertise
+
+- Product design and design direction
+- AI and machine-learning workflows
+- Data products, technical UX, and enterprise UX
+- Expert tools and human-in-the-loop systems
+- Systems thinking, product strategy, research, and prototyping
+- Product architecture, design systems, design QA, and creative technology
+
+### Selected experience
+
+Most recently, Gabriel worked as Design Director at Work & Co. and Principal Designer at McKinsey & Company / QuantumBlack, where he led product design for Kedro. Earlier work includes teams at TBWA\\Media Arts Lab, Wieden+Kennedy, Google Creative Lab, R/GA, Publicis Sapient, and Songkick.
+
+### Recognition listed on the portfolio
+
+AI Awards; Fast Company Innovation by Design; D&AD; Cannes Lions; The FWA; Awwwards; The Webby Awards; Lovie Awards; Behance.
+
+## Selected Work
+
+### Kedro
+
+URL: https://comym.co/case-studies/kedro/
+
+Kedro is an open-source and enterprise data-science product. Gabriel helped mature Kedro from a powerful technical framework into a trusted product experience for data-science teams, enterprise users, and the open-source community.
+
+#### Role
+
+As Principal Designer, Gabriel led product design and design direction across Kedro and Kedro-Viz, including research, interaction design, technical constraints, design systems, QA, branding, mentorship, and product strategy.
+
+#### Context and approach
+
+The work addressed modular and reproducible data-science pipelines, complex pipeline relationships, experiment comparison, and communication beyond the codebase. It explored navigation models, grouping, hierarchy, progressive detail, product rituals, research synthesis, and contribution workflows.
+
+#### Outcomes
+
+Kedro matured into a widely adopted open-source and enterprise data-science product. The portfolio notes recognition by Fast Company, the UK Technical Communication Awards, and the AI Awards. Kedro-Viz became part of the working toolkit for enterprise, government, research, and data-intensive organizations.
+
+### Rivendell
+
+URL: https://comym.co/case-studies/rivendell/
+
+Rivendell was a prescriptive-analytics concept for a complex mineral-export port operation. It connected fragmented data across trains, equipment, stockpiles, conveyors, ship loaders, and vessels to support clearer planning decisions.
+
+#### Role
+
+As Principal Designer at McKinsey / QuantumBlack, Gabriel translated throughput prediction, route constraints, and optimization into a planning sandbox where experts could compare viable scenarios and make better decisions under time pressure.
+
+#### Context and approach
+
+The concept represented a complex physical network and operational constraints including equipment capacity, routes, stockpiles, maintenance, vessel commitments, weather, tide, and data availability. It framed optimization as explainable decision support with scenario comparison, confidence cues, manual overrides, and an audit trail for human decisions.
+
+#### Outcome
+
+The work translated a complex mineral-export operation into a human-in-the-loop planning concept. Users could inspect the network, compare feasible shift scenarios, and understand the constraints behind each recommendation without replacing expert judgment.
+
+### WovenLight
+
+URL: https://comym.co/case-studies/wovenlight/
+
+WovenLight is a case study about AI-native workflows for high-stakes investment analysis. Investment teams needed to process company, market, and financial information without losing judgment or accountability.
+
+#### Role
+
+Gabriel designed AI-assisted workflows for research, analysis, and decision-making, translating expert behavior into structured product patterns.
+
+#### Context and approach
+
+The work addressed workflow architecture, source visibility, review states, editable outputs, confidence cues, user oversight, and reusable patterns for private-equity analysis.
+
+#### Outcomes
+
+The work turned a hard-coded internal tool into WovenLight's first modular AI workflow product for co-investment appraisal, commercial pitches, and private-equity value creation. The portfolio reports that Rapid Diagnostic Reports reduced related pitch work from three hours to one hour, were used in at least 75% of applicable sales pitches, supported live commercial demos, and helped enable the company's first co-investment deal.
+
+### PerformanceAI
+
+URL: https://comym.co/case-studies/performanceai/
+
+PerformanceAI explored how teams could sustain the value of machine-learning models after project delivery, including the risks created by changing data, conditions, processes, and regulation.
+
+#### Role
+
+Gabriel shaped product vision, user needs, the model-monitoring lifecycle, and concepts for dashboards, alerts, model-run comparison, reproducibility, and corrective action.
+
+#### Context and approach
+
+The product direction covered four capabilities: configure, detect, understand, and correct. It included dashboards, comparison views, alerting logic, drift signals, and performance summaries for business users, risk managers, data scientists, team directors, and machine-learning engineers.
+
+#### Outcomes
+
+PerformanceAI was adopted by machine-learning engineers across the Firm and applied across numerous client engagements. The portfolio describes a reusable model for ML performance workflows across four user groups, combining a Python API library with a React/Node frontend for monitoring, dashboards, alerts, and model-run comparison.
+
+## Canonical resources
+
+- Homepage: https://comym.co/
+- About: https://comym.co/about/
+- Contact: mailto:gabrielcomym@gmail.com
+- Insights: https://gabrielcomym.medium.com/

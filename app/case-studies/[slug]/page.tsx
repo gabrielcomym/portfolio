@@ -12,6 +12,14 @@ import { ProjectHero } from '@/components/project-hero'
 import { ScrollRevealController } from '@/components/scroll-reveal'
 import { AboutProjectCarousel } from '@/components/about-project-carousel'
 import { CASES } from '@/lib/cases-data'
+import { StructuredData } from '@/components/structured-data'
+import { caseStudyJsonLd } from '@/lib/structured-data'
+import {
+  SITE_NAME,
+  SITE_PREVIEW_IMAGE,
+  SITE_PREVIEW_IMAGE_HEIGHT,
+  SITE_PREVIEW_IMAGE_WIDTH,
+} from '@/lib/site'
 
 export const dynamicParams = false
 
@@ -27,9 +35,32 @@ export async function generateMetadata({
   const { slug } = await params
   const study = Object.hasOwn(CASES, slug) ? CASES[slug] : undefined
   if (!study) return {}
+  const path = `/case-studies/${study.slug}/`
+  const title = `${study.title} — ${study.dek}`
   return {
-    title: `${study.title} — Comym`,
-    description: study.dek,
+    title,
+    description: study.workIntro,
+    alternates: { canonical: path },
+    openGraph: {
+      title,
+      description: study.workIntro,
+      url: path,
+      siteName: SITE_NAME,
+      locale: 'en_US',
+      type: 'article',
+      images: [{
+        url: SITE_PREVIEW_IMAGE,
+        width: SITE_PREVIEW_IMAGE_WIDTH,
+        height: SITE_PREVIEW_IMAGE_HEIGHT,
+        alt: `${study.title} — Comym portfolio preview`,
+      }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: study.workIntro,
+      images: [SITE_PREVIEW_IMAGE],
+    },
   }
 }
 
@@ -47,6 +78,7 @@ export default async function CaseStudyPage({
 
   return (
     <main>
+      <StructuredData data={caseStudyJsonLd(study)} />
       <ScrollRevealController />
       <SiteHeader />
 

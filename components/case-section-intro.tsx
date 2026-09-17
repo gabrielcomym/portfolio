@@ -14,6 +14,15 @@ export function CaseSectionIntro({ section }: { section: CaseSection }) {
         <h3 data-scroll-reveal="copy" className="text-display text-ink">{section.heading}</h3>
         {section.ctaLabel ? <PillButton onClick={() => setOpen(true)}>{section.ctaLabel}</PillButton> : null}
       </div>
+      <section className="sr-only" aria-label={`${section.heading} case-study details`}>
+        <h4>{section.heading} details</h4>
+        {section.details.map((detail) => (
+          <section key={detail.label}>
+            <h5>{detail.label}</h5>
+            <p>{detail.copy}</p>
+          </section>
+        ))}
+      </section>
       <CaseDetailPanel open={open} heading={section.heading} details={section.details} onClose={() => setOpen(false)} />
     </>
   )

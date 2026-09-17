@@ -1,12 +1,43 @@
 import type { Metadata } from 'next'
 import { ExperimentalHome } from '@/components/experimental-home'
+import { StructuredData } from '@/components/structured-data'
+import { homePageJsonLd, websiteJsonLd } from '@/lib/structured-data'
+import {
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_PREVIEW_IMAGE,
+  SITE_PREVIEW_IMAGE_ALT,
+  SITE_PREVIEW_IMAGE_HEIGHT,
+  SITE_PREVIEW_IMAGE_WIDTH,
+} from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'Comym — Selected projects',
-  description:
-    'Comym is the portfolio of Gabriel Comym, a product design leader shaping AI, data, and expert workflows into clearer products and technical experiences.',
+  title: 'Comym — Product design leadership for AI, data, and technical products',
+  description: SITE_DESCRIPTION,
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: 'Comym — Product design leadership for AI, data, and technical products',
+    description: SITE_DESCRIPTION,
+    url: '/',
+    siteName: SITE_NAME,
+    locale: 'en_US',
+    type: 'website',
+    images: [{ url: SITE_PREVIEW_IMAGE, width: SITE_PREVIEW_IMAGE_WIDTH, height: SITE_PREVIEW_IMAGE_HEIGHT, alt: SITE_PREVIEW_IMAGE_ALT }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Comym — Product design leadership for AI, data, and technical products',
+    description: SITE_DESCRIPTION,
+    images: [SITE_PREVIEW_IMAGE],
+  },
 }
 
 export default function HomePage() {
-  return <ExperimentalHome />
+  return (
+    <>
+      <StructuredData data={websiteJsonLd()} />
+      <StructuredData data={homePageJsonLd()} />
+      <ExperimentalHome />
+    </>
+  )
 }
