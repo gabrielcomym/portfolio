@@ -6,7 +6,7 @@
 .plainMedia { object-fit: cover; }
 
 /* Desktop measures map directly to Figma 129:1569 at the 1344px content width. */
-.workflow, .trust, .repeatability { margin-top: var(--space-case-section-title); }
+.workflow, .trust, .repeatability { margin-top: var(--space-case-section-before-title); }
 .s1Overview { width: 100%; aspect-ratio: 1344 / 757; margin-top: 0; }
 .s1Map { width: 83.036%; aspect-ratio: 1116 / 750; margin-top: 69px; }
 .s1Pair { position: relative; height: 436px; margin-top: 88px; }
@@ -43,7 +43,7 @@
 .s3LargeVertical { aspect-ratio: 774 / 1197; }
 
 @media (max-width: 767px) {
-  .workflow, .trust, .repeatability { margin-top: var(--space-case-section-title); }
+  .workflow, .trust, .repeatability { margin-top: var(--space-case-section-before-title); }
   .s1Overview, .s2Overview, .s3Overview { margin-top: 0; }
   .s1Map, .s2Map, .s3TenColumns { width: 100%; margin-top: var(--space-case-rhythm-small); }
   .s1Pair, .s2Pair, .s2Cluster, .s3PairOne, .s3PairTwo, .s3Final { display: flex; height: auto; flex-direction: column; gap: var(--space-case-rhythm-small); margin-top: var(--space-case-rhythm-small); }

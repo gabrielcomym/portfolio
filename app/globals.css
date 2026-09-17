@@ -65,9 +65,13 @@
   --space-case-rhythm-medium: 10rem; /* 160 */
   --space-case-rhythm-large: 15.625rem; /* 250 */
   --space-case-rhythm-xlarge: 25rem; /* 400 */
-  --space-case-section-title: var(--space-case-rhythm-large);
+  /* Chapter title rhythm, matched to Kedro's approved “Preserving value through integration” section. */
+  --space-case-section-before-title: 17.375rem; /* 278 */
+  --space-case-section-title-top: 15.625rem; /* 250 */
+  --space-case-section-title-bottom: 27.0625rem; /* 433 */
   --space-case-section-title-gap: 2rem;
-  --space-case-summary: var(--space-case-rhythm-xlarge);
+  --space-case-summary-top: calc(var(--space-case-section-before-title) + var(--space-case-section-title-top));
+  --space-case-summary-bottom: var(--space-case-section-title-bottom);
 
   /* ---- Motion ---- */
   --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
@@ -92,6 +96,9 @@
     --space-case-rhythm-medium: 6.5rem; /* 104 */
     --space-case-rhythm-large: 10rem; /* 160 */
     --space-case-rhythm-xlarge: 15rem; /* 240 */
+    --space-case-section-before-title: 11rem; /* 176 */
+    --space-case-section-title-top: 10rem; /* 160 */
+    --space-case-section-title-bottom: 15rem; /* 240 */
   }
 }
 

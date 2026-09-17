@@ -5,7 +5,7 @@
 .media { object-fit: contain; }
 
 /* Desktop measures map directly to Figma 128:1373 at a 1344px content width. */
-.visibility, .integration, .ecosystem { margin-top: var(--space-case-section-title); }
+.visibility, .integration, .ecosystem { margin-top: var(--space-case-section-before-title); }
 .s1Overview { width: 100%; aspect-ratio: 1344 / 761; margin-top: 0; }
 .s1PairOne { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gutter); height: 722px; margin-top: 55px; }
 .s1Pipeline { margin-top: 58px; aspect-ratio: 660 / 605; }
@@ -36,7 +36,7 @@
 .s3Diagram { position: absolute; top: 413px; left: 67.857%; width: 23.661%; aspect-ratio: 318 / 281; }
 
 @media (max-width: 767px) {
-  .visibility, .integration, .ecosystem { margin-top: var(--space-case-section-title); }
+  .visibility, .integration, .ecosystem { margin-top: var(--space-case-section-before-title); }
   .s1Overview, .s2Overview, .ecosystem > .full { margin-top: 0; }
   .s1PairOne, .twoUp, .s2Pair, .s3Final { display: flex; height: auto; flex-direction: column; gap: var(--space-case-rhythm-small); margin-top: var(--space-case-rhythm-small); }
   .s1Pipeline, .s1Laptop, .s1Flow, .half, .elevenColumns, .s2History, .s2Metrics, .full, .tenColumns, .eightColumns, .s3Vertical, .s3Panel, .s3Diagram { position: relative; top: auto; left: auto; width: 100%; margin-top: 0; }
