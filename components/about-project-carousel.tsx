@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef } from 'react'
 import { CASES, CASE_ORDER } from '@/lib/cases-data'
+import { withBasePath } from '@/lib/utils'
 import styles from './about-project-carousel.module.css'
 
 export function AboutProjectCarousel({ excludeSlug }: { excludeSlug?: string }) {
@@ -240,7 +241,7 @@ export function AboutProjectCarousel({ excludeSlug }: { excludeSlug?: string }) 
           {projects.map((project) => (
             <Link key={project.title} href={project.href} className={styles.card} aria-label={`View ${project.title}: ${project.description}`}>
               <span className={styles.media}>
-                <Image src={project.image} alt="" fill sizes="(max-width: 767px) 78vw, (max-width: 1439px) 34vw, 490px" className={styles.image} />
+                <Image src={withBasePath(project.image)} alt="" fill sizes="(max-width: 767px) 78vw, (max-width: 1439px) 34vw, 490px" className={styles.image} />
               </span>
               <span className={styles.details}>
                 <span className={styles.title}>{project.title}</span>

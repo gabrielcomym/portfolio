@@ -5,6 +5,7 @@ import { SiteFooter } from '@/components/site-footer'
 import { Container } from '@/components/layout/container'
 import { ScrollRevealController } from '@/components/scroll-reveal'
 import { AboutProjectCarousel } from '@/components/about-project-carousel'
+import { withBasePath } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: 'About — Comym',
@@ -131,7 +132,7 @@ function AboutImage({
       data-scroll-reveal-delay={revealDelay}
       className={`${className} ${ratio} relative overflow-hidden rounded-image bg-ink`}
     >
-      <Image src={src} alt={alt} fill priority={src.endsWith('about_1.png') || src.endsWith('about_2.png')} sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
+      <Image src={withBasePath(src)} alt={alt} fill priority={src.endsWith('about_1.png') || src.endsWith('about_2.png')} sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
     </figure>
   )
 }

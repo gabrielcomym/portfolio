@@ -2,11 +2,12 @@ import Image from 'next/image'
 import type { ReactNode } from 'react'
 import { CaseSectionIntro } from '@/components/case-section-intro'
 import type { CaseSection } from '@/lib/cases-data'
+import { withBasePath } from '@/lib/utils'
 import styles from './kedro-case-sections.module.css'
 
 type Props = { sections: CaseSection[] }
 
-const media = '/media/project/kedro'
+const media = withBasePath('/media/project/kedro')
 
 function MediaFrame({
   src,

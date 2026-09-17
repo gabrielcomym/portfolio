@@ -6,6 +6,7 @@ import type { CSSProperties } from 'react'
 import { useEffect, useRef } from 'react'
 import { CASES, CASE_ORDER } from '@/lib/cases-data'
 import { GLOBAL_NAV_LINKS } from '@/components/site-header'
+import { withBasePath } from '@/lib/utils'
 import styles from './experimental-home.module.css'
 
 const PROJECTS = CASE_ORDER.map((slug) => {
@@ -137,7 +138,7 @@ export function ExperimentalHome() {
             >
               <span className={styles.projectMedia}>
                 <Image
-                  src={project.image}
+                  src={withBasePath(project.image)}
                   alt=""
                   fill
                   priority={index < 2}

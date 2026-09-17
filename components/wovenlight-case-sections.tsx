@@ -2,11 +2,12 @@ import Image from 'next/image'
 import type { ReactNode } from 'react'
 import { CaseSectionIntro } from '@/components/case-section-intro'
 import type { CaseSection } from '@/lib/cases-data'
+import { withBasePath } from '@/lib/utils'
 import styles from './wovenlight-case-sections.module.css'
 
 type Props = { sections: CaseSection[] }
 
-const media = '/media/project/wovenlight'
+const media = withBasePath('/media/project/wovenlight')
 
 function MediaFrame({
   src,

@@ -1,11 +1,12 @@
 import Image from 'next/image'
+import { withBasePath } from '@/lib/utils'
 import styles from './project-hero.module.css'
 
 export function ProjectHero({ src, alt }: { src: string; alt: string }) {
   return (
     <div className={styles.hero}>
       <Image
-        src={src}
+        src={withBasePath(src)}
         alt={alt}
         fill
         preload

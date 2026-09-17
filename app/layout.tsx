@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { DM_Sans } from 'next/font/google'
 import { PageTransition } from '@/components/page-transition'
+import { withBasePath } from '@/lib/utils'
 import './globals.css'
 
 const dmSans = DM_Sans({
@@ -15,10 +16,10 @@ export const metadata: Metadata = {
     'Comym is the design practice of a product design leader specializing in AI, data, and expert workflows for technical domains.',
   icons: {
     icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.png', type: 'image/png' },
+      { url: withBasePath('/favicon.svg'), type: 'image/svg+xml' },
+      { url: withBasePath('/favicon.png'), type: 'image/png' },
     ],
-    shortcut: '/favicon.png',
+    shortcut: withBasePath('/favicon.png'),
   },
 }
 

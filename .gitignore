@@ -1,50 +1,16 @@
-# macOS
-.DS_Store
+# v0 sandbox internal files
+__v0_runtime_loader.js
+__v0_devtools.tsx
+__v0_jsx-dev-runtime.ts
+.snowflake/
+.v0-trash/
+.vercel/
 
-# Editor / IDE
-.vscode/
-.idea/
-*.swp
-*.swo
+# Environment variables
+.env*
 
-# Local Claude Code overrides (project-level settings stays in git; user overrides do not)
-.claude/settings.local.json
-.claude/.credentials.json
-
-# Local working memory — not repo content
-CURRENT.md
-PROGRESS.md
-docs/harness-roadmap.md
-
-# Environment / secrets
-.env
-.env.local
-.env.*.local
-
-# Dependencies (pick what applies to your stack)
-node_modules/
-.venv/
-venv/
-__pycache__/
-*.py[cod]
-
-# Build / dist
-dist/
-build/
-*.egg-info/
+# Common ignores
+node_modules
 .next/
-.nuxt/
-.cache/
-
-# Logs / runtime
-*.log
-*.pid
-*.seed
-*.tgz
-
-# Test / coverage
-coverage/
-.coverage
-.pytest_cache/
-.tox/
-htmlcov/
+.DS_Store
+*.tsbuildinfo

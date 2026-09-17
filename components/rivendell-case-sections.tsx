@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { CaseSectionIntro } from '@/components/case-section-intro'
 import type { CaseSection } from '@/lib/cases-data'
+import { withBasePath } from '@/lib/utils'
 import styles from './rivendell-case-sections.module.css'
 
 // Each entry maps an export to its Figma column start/span and native dimensions.
@@ -25,7 +26,7 @@ export function RivendellCaseSections({ sections }: { sections: CaseSection[] })
                     style={{ gridColumn: `${column} / span ${span}` }}
                   >
                     <Image
-                      src={`/media/project/rivendell/section${chapterIndex + 1}_${number}.png`}
+                      src={withBasePath(`/media/project/rivendell/section${chapterIndex + 1}_${number}.png`)}
                       alt={`Rivendell — ${section.heading} Product view ${number}.`}
                       width={width}
                       height={height}
