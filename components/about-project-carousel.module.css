@@ -1,6 +1,6 @@
 .section {
   --carousel-inset: max(1.5rem, calc((100vw - var(--grid-max)) / 2 + var(--grid-margin)));
-  margin-top: var(--space-case-rhythm-large);
+  margin-top: 0;
   padding-bottom: var(--space-case-rhythm-large);
 }
 
@@ -133,7 +133,7 @@
 
 @media (max-width: 767px) {
   .section {
-    margin-top: var(--space-case-rhythm-medium);
+    margin-top: 0;
     padding-bottom: var(--space-case-rhythm-medium);
   }
 
