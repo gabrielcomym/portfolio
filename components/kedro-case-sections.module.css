@@ -5,8 +5,8 @@
 .media { object-fit: contain; }
 
 /* Desktop measures map directly to Figma 128:1373 at a 1344px content width. */
-.visibility { margin-top: 240px; }
-.s1Overview { width: 100%; aspect-ratio: 1344 / 761; margin-top: 64px; }
+.visibility, .integration, .ecosystem { margin-top: var(--space-case-section-title); }
+.s1Overview { width: 100%; aspect-ratio: 1344 / 761; margin-top: 0; }
 .s1PairOne { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gutter); height: 722px; margin-top: 55px; }
 .s1Pipeline { margin-top: 58px; aspect-ratio: 660 / 605; }
 .s1Laptop { aspect-ratio: 659 / 722; }
@@ -15,8 +15,7 @@
 .half { aspect-ratio: 660 / 605; }
 .elevenColumns { width: 91.518%; aspect-ratio: 1230 / 893; margin-top: 55px; }
 
-.integration { margin-top: 278px; }
-.s2Overview { width: 100%; aspect-ratio: 1344 / 750; margin-top: 183px; }
+.s2Overview { width: 100%; aspect-ratio: 1344 / 750; margin-top: 0; }
 .s2Pair { position: relative; height: 748px; margin-top: 58px; }
 .s2History { width: 40.625%; aspect-ratio: 546 / 748; }
 .s2Metrics { position: absolute; top: 134px; left: 42.336%; width: 57.664%; aspect-ratio: 775 / 480; }
@@ -27,8 +26,7 @@
 .integration .tenColumns + .full { aspect-ratio: 1343 / 586; margin-top: 58px; }
 .eightColumns { width: 66.071%; aspect-ratio: 888 / 477; margin-top: 58px; }
 
-.ecosystem { margin-top: 452px; }
-.ecosystem > .full { aspect-ratio: 1344 / 814; margin-top: 32px; }
+.ecosystem > .full { aspect-ratio: 1344 / 814; margin-top: 0; }
 .ecosystem .tenColumns { aspect-ratio: 1116 / 696; margin-top: 34px; }
 .ecosystem .tenColumns + .full { aspect-ratio: 1344 / 537; margin-top: 44px; }
 .ecosystem .elevenColumns { aspect-ratio: 1230 / 793; margin-top: 24px; }
@@ -38,8 +36,8 @@
 .s3Diagram { position: absolute; top: 413px; left: 67.857%; width: 23.661%; aspect-ratio: 318 / 281; }
 
 @media (max-width: 767px) {
-  .visibility, .integration, .ecosystem { margin-top: var(--space-case-rhythm-large); }
-  .s1Overview, .s2Overview, .ecosystem > .full { margin-top: var(--space-case-rhythm-medium); }
+  .visibility, .integration, .ecosystem { margin-top: var(--space-case-section-title); }
+  .s1Overview, .s2Overview, .ecosystem > .full { margin-top: 0; }
   .s1PairOne, .twoUp, .s2Pair, .s3Final { display: flex; height: auto; flex-direction: column; gap: var(--space-case-rhythm-small); margin-top: var(--space-case-rhythm-small); }
   .s1Pipeline, .s1Laptop, .s1Flow, .half, .elevenColumns, .s2History, .s2Metrics, .full, .tenColumns, .eightColumns, .s3Vertical, .s3Panel, .s3Diagram { position: relative; top: auto; left: auto; width: 100%; margin-top: 0; }
   .s1Flow, .integration .tenColumns + .full, .ecosystem .tenColumns + .full { margin-top: var(--space-case-rhythm-small); }

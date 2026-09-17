@@ -65,6 +65,8 @@
   --space-case-rhythm-medium: 10rem; /* 160 */
   --space-case-rhythm-large: 15.625rem; /* 250 */
   --space-case-rhythm-xlarge: 25rem; /* 400 */
+  --space-case-section-title: var(--space-case-rhythm-large);
+  --space-case-section-title-gap: 2rem;
 
   /* ---- Motion ---- */
   --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);

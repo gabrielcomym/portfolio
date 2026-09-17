@@ -1,5 +1,5 @@
-.chapter { margin-top: var(--space-case-rhythm-large); }
-.media { display: grid; gap: var(--space-case-rhythm-small); margin-top: var(--space-case-rhythm-medium); }
+.chapter { margin-top: var(--space-case-section-title); }
+.media { display: grid; gap: var(--space-case-rhythm-small); margin-top: 0; }
 .row, .cluster { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--grid-gap); align-items: center; }
 .frame { min-width: 0; margin: 0; }
 .image { display: block; width: 100%; height: auto; border-radius: var(--radius-image); }
