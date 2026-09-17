@@ -5,7 +5,6 @@ const FOOTER_NAV_LINKS = [
   { label: 'Work', href: '/' },
   { label: 'Insights', href: 'https://gabrielcomym.medium.com/', external: true },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/gabrielcomym/', external: true },
-  { label: 'About', href: '/about' },
 ]
 
 /**

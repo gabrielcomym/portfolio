@@ -270,7 +270,7 @@ export default function AboutPage() {
         </AboutRow>
       </Container>
 
-      <div className="pt-[var(--space-6)]">
+      <div className="pt-[var(--space-case-summary)]">
         <AboutProjectCarousel />
       </div>
 
