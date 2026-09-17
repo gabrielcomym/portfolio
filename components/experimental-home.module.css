@@ -1,0 +1,318 @@
+.stage {
+  --rail-inset-top: clamp(7.5rem, 15.28vh, 10.3125rem);
+  --rail-edge-padding: clamp(1.5rem, 3vw, 3rem);
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  background: var(--experimental-bg, #151515);
+  color: #fff;
+  overscroll-behavior: none;
+}
+
+.stage:focus {
+  outline: none;
+}
+
+.railViewport {
+  position: absolute;
+  z-index: 1;
+  top: calc(var(--rail-inset-top) - var(--rail-edge-padding));
+  bottom: max(4rem, env(safe-area-inset-bottom));
+  right: 0;
+  left: 0;
+  width: 100%;
+  margin: 0 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior-y: contain;
+  scrollbar-width: none;
+}
+
+.railViewport::-webkit-scrollbar {
+  display: none;
+}
+
+.railViewport:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 6px;
+}
+
+.rail {
+  display: grid;
+  gap: 1.5rem;
+  width: min(37rem, 48vw);
+  margin: 0 auto;
+  padding-top: var(--rail-edge-padding);
+  padding-bottom: calc(var(--rail-edge-padding) * 2);
+}
+
+.projectCard {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 592 / 368;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(1.25rem);
+  animation: project-enter 600ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(90ms + var(--project-index) * 55ms);
+}
+
+.projectMedia {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #0d0d0d;
+}
+
+.projectMedia::after {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 0.2);
+  content: '';
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.projectMedia img {
+  object-fit: cover;
+  transform: scale(1.008);
+  transition: transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.projectDetails {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: calc(100% - 1.5rem);
+  display: grid;
+  gap: 0.75rem;
+  width: min(24rem, 28vw);
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(0.75rem, -44%, 0);
+  transition:
+    opacity 180ms ease-out,
+    transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.projectTitle,
+.projectDescription {
+  display: block;
+  font-family: var(--font-dm-sans), sans-serif;
+  letter-spacing: 0;
+  overflow-wrap: break-word;
+}
+
+.projectTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.projectDescription {
+  max-width: calc(22rem - 70px);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.projectCard:hover .projectMedia::after,
+.projectCard:focus-visible .projectMedia::after,
+.projectCard:hover .projectDetails,
+.projectCard:focus-visible .projectDetails {
+  opacity: 1;
+}
+
+.projectCard:hover .projectMedia img,
+.projectCard:focus-visible .projectMedia img {
+  transform: scale(1);
+}
+
+.projectCard:hover .projectDetails,
+.projectCard:focus-visible .projectDetails {
+  transform: translate3d(0, -50%, 0);
+}
+
+.projectCard:focus-visible .projectMedia {
+  outline: 2px solid #fff;
+  outline-offset: 5px;
+}
+
+.projectCard:focus-visible {
+  outline: none;
+}
+
+.edge {
+  position: fixed;
+  z-index: 3;
+  right: max(3rem, env(safe-area-inset-right));
+  left: max(3rem, env(safe-area-inset-left));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1;
+  pointer-events: none;
+  opacity: 1;
+  animation: edge-enter 500ms 40ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.topEdge {
+  top: max(2.5rem, env(safe-area-inset-top));
+}
+
+.bottomEdge {
+  bottom: max(2.5rem, env(safe-area-inset-bottom));
+}
+
+.edgeLink,
+.primaryNav {
+  pointer-events: auto;
+}
+
+.edgeLink {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 160ms ease;
+}
+
+.edgeLink:hover,
+.edgeLink:focus-visible {
+  opacity: 0.55;
+}
+
+.edgeLink:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 5px;
+}
+
+.primaryNav {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+@keyframes project-enter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes edge-enter {
+  from {
+    transform: translateY(-0.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1439px) {
+  .railViewport {
+    bottom: max(3rem, env(safe-area-inset-bottom));
+  }
+
+  .rail { width: min(37rem, 46vw); }
+
+  .projectTitle {
+    font-size: 2rem;
+  }
+
+  .edge {
+    right: 2.5rem;
+    left: 2.5rem;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .railViewport {
+    top: calc(6.5rem - var(--rail-edge-padding));
+    bottom: max(5rem, env(safe-area-inset-bottom));
+  }
+
+  .stage { --rail-edge-padding: 1.25rem; }
+
+  .rail {
+    width: 78vw;
+    gap: 1rem;
+  }
+
+  .projectDetails {
+    top: auto;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    gap: 0.5rem;
+    width: auto;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .projectMedia::after {
+    background: linear-gradient(to top, rgb(0 0 0 / 0.66), rgb(0 0 0 / 0.04) 68%);
+    opacity: 1;
+  }
+
+  .projectCard:hover .projectDetails,
+  .projectCard:focus-visible .projectDetails {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .projectTitle {
+    font-size: 1.75rem;
+  }
+
+  .projectDescription {
+    font-size: 0.75rem;
+  }
+
+  .edge {
+    right: max(1.25rem, env(safe-area-inset-right));
+    left: max(1.25rem, env(safe-area-inset-left));
+    font-size: 1rem;
+  }
+
+  .topEdge {
+    top: max(1.5rem, env(safe-area-inset-top));
+  }
+
+  .bottomEdge {
+    bottom: max(1.5rem, env(safe-area-inset-bottom));
+  }
+
+  .primaryNav {
+    gap: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projectCard,
+  .edge {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .projectMedia::after,
+  .projectMedia img,
+  .projectDetails,
+  .edgeLink {
+    transition: none;
+  }
+}

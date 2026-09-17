@@ -1,0 +1,208 @@
+@import 'tailwindcss';
+
+
+/* ==========================================================================
+   Comym Design System
+   Single source of truth for color, type, spacing, radius, and grid tokens,
+   consolidated from the Figma file (landing / project / about pages).
+
+   Consolidation notes (duplicates found and merged):
+   - Two "muted gray" values existed for secondary text: #606060 (landing
+     chips/captions) and #696969 (project/about body copy + chips). Both
+     served the same semantic role (secondary/de-emphasized text), so both
+     collapse into a single --muted token (#666666).
+   - #f2f2f2 (tag chips) and #e1e1e1 (the "Read more" pill button) looked
+     like near-duplicate grays but are two distinct components with
+     different roles (passive label vs. clickable CTA) — kept as separate
+     --chip-bg and --pill-bg tokens rather than merged.
+   - All type roles resolve to DM Sans. Hierarchy is created with the approved
+     size, weight, line-height, and spacing distinctions rather than a second
+     typeface.
+   - Case media follows the 12-column grid: feature cards occupy six columns
+     from grid column 4, while secondary cards occupy two six-column tracks.
+     Their proportions are intentionally editorial rather than generic card
+     ratios, and their titles use the shared Heading/Large role.
+   ========================================================================== */
+:root {
+  /* ---- Color ---- */
+  --ink: #000000;
+  --paper: #ffffff;
+  --ink-muted: #666666;
+  --chip-bg: #f2f2f2;
+  --pill-bg: #e1e1e1;
+  --hairline: #e5e5e5;
+  --experimental-bg: #151515;
+  --transition-bg: #1e1e1e;
+  --color-detail-scrim: rgb(30 30 30 / 95%);
+
+  /* ---- Radius ---- */
+  --radius-pill: 999px;
+  --radius-image: 8px;
+
+  /* ---- 12-column grid ---- */
+  --grid-max: 1440px;
+  --grid-margin: 3rem; /* 48px outer margin */
+  --grid-gap: 1.5rem; /* 24px gutter */
+
+  /* ---- Spacing scale (8px base) ---- */
+  --space-1: 0.5rem; /* 8 */
+  --space-2: 1rem; /* 16 */
+  --space-3: 1.5rem; /* 24 */
+  --space-4: 2rem; /* 32 */
+  --space-6: 3rem; /* 48 */
+  --space-8: 4rem; /* 64 */
+  --space-9: 4.5rem; /* 72 */
+  --space-11: 5.5rem; /* 88 */
+  --space-22: 11rem; /* 176 — hero band bottom padding, snapped from 173px */
+  --space-about-row: 7rem; /* 112 — standard vertical rhythm between About rows */
+  --space-about-feature: 12rem; /* 192 — transition into a major About block */
+  --space-about-hero: 10.3125rem; /* 165 — header to About headline */
+  --space-about-gallery: 1.375rem; /* 22 — Figma About gallery gutter */
+  --space-before-footer: 16rem; /* 256 — shared final page breathing room */
+  --space-footer-content: 4.5rem; /* 72 — wordmark to footer navigation */
+  /* Kedro narrative rhythm: related block, text-to-media, chapter, closing. */
+  --space-case-rhythm-small: 5rem; /* 80 */
+  --space-case-rhythm-medium: 10rem; /* 160 */
+  --space-case-rhythm-large: 15.625rem; /* 250 */
+  --space-case-rhythm-xlarge: 25rem; /* 400 */
+
+  /* ---- Motion ---- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --ease-editorial-reveal: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --duration-editorial-copy: 500ms;
+  --duration-editorial-media: 520ms;
+  --delay-editorial-pair: 80ms;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --space-before-footer: 22rem; /* 352 — doubled desktop closing rhythm */
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --space-about-hero: 6rem;
+    --space-about-gallery: 1.5rem;
+    --space-case-rhythm-small: 3.5rem; /* 56 */
+    --space-case-rhythm-medium: 6.5rem; /* 104 */
+    --space-case-rhythm-large: 10rem; /* 160 */
+    --space-case-rhythm-xlarge: 15rem; /* 240 */
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html[data-scroll-reveal-ready='true'] [data-scroll-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 1.25rem, 0);
+    will-change: opacity, transform;
+    transition:
+      opacity var(--duration-editorial-copy) var(--ease-editorial-reveal) var(--scroll-reveal-delay, 0ms),
+      transform var(--duration-editorial-copy) var(--ease-editorial-reveal) var(--scroll-reveal-delay, 0ms);
+  }
+
+  html[data-scroll-reveal-ready='true'] [data-scroll-reveal='media'] {
+    transform: translate3d(0, 2rem, 0);
+    transition-duration: var(--duration-editorial-media);
+  }
+
+  html[data-scroll-reveal-ready='true'] [data-scroll-reveal='headline'] {
+    transform: translate3d(0, 1.5rem, 0);
+    transition-duration: 560ms;
+  }
+
+  /* Keep navigation usable while giving the page chrome the same arrival language. */
+  html[data-scroll-reveal-ready='true'] [data-scroll-reveal='chrome'] {
+    opacity: 1;
+    transform: translate3d(0, -0.5rem, 0);
+    transition-duration: 420ms;
+  }
+
+  html[data-scroll-reveal-ready='true'] [data-scroll-reveal-delay='1'] {
+    --scroll-reveal-delay: var(--delay-editorial-pair);
+  }
+
+  html[data-scroll-reveal-ready='true'] [data-scroll-revealed='true'] {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    will-change: auto;
+  }
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-ink-muted: var(--ink-muted);
+  --color-chip-bg: var(--chip-bg);
+  --color-pill-bg: var(--pill-bg);
+  --color-hairline: var(--hairline);
+
+  --radius-pill: var(--radius-pill);
+  --radius-image: var(--radius-image);
+
+  --font-sans: var(--font-dm-sans), 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+
+}
+
+@layer base {
+  body {
+    @apply bg-paper text-ink;
+  }
+}
+
+/* ==========================================================================
+   Typography scale — named, semantic sizes used across all 3 pages.
+   Font family: font-sans (DM Sans) for every role. Hierarchy is semantic, not
+   typeface-based, so each utility remains stable as the system evolves.
+   ========================================================================== */
+@layer components {
+  .text-display {
+    @apply font-sans font-bold text-[clamp(2.5rem,5vw,4.5rem)] leading-[1] tracking-normal;
+  }
+  .text-heading-lg {
+    @apply font-sans font-bold text-[2rem] leading-none md:text-[2.5rem];
+  }
+  .text-heading-sm {
+    @apply font-sans font-bold text-xl leading-none md:text-2xl;
+  }
+  .text-nav {
+    @apply font-sans font-bold text-2xl leading-none tracking-normal;
+  }
+  .text-body-ui {
+    @apply font-sans font-normal text-lg leading-[1.45] md:text-2xl md:leading-[1.5];
+  }
+  .text-body-editorial {
+    @apply font-sans font-bold text-lg leading-[1.2] md:text-2xl md:leading-none;
+  }
+  .text-link-editorial {
+    @apply font-sans font-bold text-2xl leading-none tracking-normal transition-colors duration-150;
+  }
+  .text-body-lg {
+    @apply font-sans font-normal text-2xl leading-[1.5];
+  }
+  .text-label {
+    @apply font-sans font-bold text-sm leading-tight;
+  }
+  .text-cta {
+    @apply font-sans text-sm leading-normal tracking-normal;
+    font-weight: 700;
+    font-variation-settings: 'opsz' 14;
+  }
+  .text-chip {
+    @apply font-sans font-normal text-[13px] leading-[1.5] tracking-normal;
+  }
+  .text-caption {
+    @apply font-sans font-semibold text-[13px] leading-[1.5];
+  }
+
+  .case-meta-tags {
+    @apply flex max-w-[774px] flex-wrap content-center items-center gap-x-3 gap-y-2;
+  }
+  .text-footer-wordmark {
+    @apply font-sans font-bold text-[clamp(4rem,17.36vw,15.625rem)] leading-none;
+    letter-spacing: -0.07em;
+  }
+
+
+}

@@ -1,0 +1,51 @@
+.caseMedia { --gutter: 24px; }
+
+.chapter { position: relative; }
+.frame { position: relative; margin: 0; overflow: hidden; border-radius: var(--radius-image); background: #131415; }
+.plainFrame { position: relative; margin: 0; overflow: hidden; border-radius: var(--radius-image); box-shadow: 0 4px 23.5px rgb(0 0 0 / 0.09); }
+.media { object-fit: contain; }
+.plainMedia { object-fit: cover; }
+
+/* Desktop measures map directly to Figma 143:1908 at the 1344px content width. */
+.ambiguity { margin-top: 240px; }
+.s1Overview { width: 100%; aspect-ratio: 1344 / 761; margin-top: 64px; }
+.s1TenColumns { width: 83.036%; aspect-ratio: 1116 / 510; margin-top: 50px; }
+.s1Pair { position: relative; height: 586px; margin-top: 50px; }
+.s1Left { position: absolute; top: 99px; left: 0; width: 40.625%; aspect-ratio: 546 / 388; }
+.s1Right { position: absolute; top: 0; right: 0; width: 47.991%; aspect-ratio: 645 / 586; }
+.s1Full { width: 100%; aspect-ratio: 1344 / 586; margin-top: 50px; }
+.s1ElevenColumns { width: 91.518%; aspect-ratio: 1230 / 658; margin-top: 50px; }
+
+.visibility { margin-top: 320px; }
+.s2Overview { width: 100%; aspect-ratio: 1344 / 701; margin-top: 146px; }
+.s2Centered { width: 66.071%; aspect-ratio: 888 / 631; margin: 74px auto 0; }
+.s2ElevenColumns { width: 91.518%; aspect-ratio: 1230 / 701; margin-top: 67px; }
+.s2Pair { position: relative; height: 617px; margin-top: 57px; }
+.s2Left { width: 57.589%; aspect-ratio: 774 / 617; }
+.s2Right { position: absolute; top: 72px; right: 0; width: 40.625%; aspect-ratio: 546 / 473; }
+.s2Full { width: 100%; aspect-ratio: 1344 / 477; margin-top: 73px; }
+
+.direction { margin-top: 318px; }
+.s3Overview { width: 100%; aspect-ratio: 1344 / 904; margin-top: 116px; }
+.s3TenColumns { width: 83.036%; aspect-ratio: 1116 / 745; margin-top: 20px; }
+.s3PairOne { position: relative; height: 988px; margin-top: 20px; }
+.s3Left { position: absolute; top: 229px; left: 0; width: 57.664%; aspect-ratio: 775 / 529; }
+.s3Right { position: absolute; top: 0; right: 0; width: 40.625%; aspect-ratio: 546 / 988; }
+.s3ElevenColumns { width: 91.518%; aspect-ratio: 1230 / 827; margin-top: 45px; }
+.s3ElevenColumns + .s3TenColumns { aspect-ratio: 1118 / 762; margin-top: 54px; }
+.s3PairTwo { position: relative; height: 1031px; margin-top: 51px; }
+.s3Tall { width: 40.625%; aspect-ratio: 546 / 1031; }
+.s3Wide { position: absolute; top: 260px; right: 0; width: 57.589%; aspect-ratio: 774 / 511; }
+.s3Full { width: 100%; aspect-ratio: 1344 / 944; margin-top: 45px; }
+.s3Final { position: relative; height: 1451px; margin-top: 41px; }
+.s3FinalTall { width: 57.589%; aspect-ratio: 774 / 1451; }
+.s3FinalPanel { position: absolute; top: 0; right: 0; width: 40.625%; aspect-ratio: 546 / 729; }
+
+@media (max-width: 767px) {
+  .ambiguity, .visibility, .direction { margin-top: var(--space-case-rhythm-large); }
+  .s1Overview, .s2Overview, .s3Overview { margin-top: var(--space-case-rhythm-medium); }
+  .s1TenColumns, .s2Centered, .s2ElevenColumns, .s3TenColumns, .s3ElevenColumns { width: 100%; margin-top: var(--space-case-rhythm-small); }
+  .s1Pair, .s2Pair, .s3PairOne, .s3PairTwo, .s3Final { display: flex; height: auto; flex-direction: column; gap: var(--space-case-rhythm-small); margin-top: var(--space-case-rhythm-small); }
+  .s1Left, .s1Right, .s2Left, .s2Right, .s3Left, .s3Right, .s3Tall, .s3Wide, .s3FinalTall, .s3FinalPanel { position: relative; top: auto; right: auto; left: auto; width: 100%; }
+  .s1Full, .s1ElevenColumns, .s2Full, .s3Full { width: 100%; margin-top: var(--space-case-rhythm-small); }
+}

@@ -1,0 +1,56 @@
+.caseMedia { --gutter: 24px; }
+.chapter { position: relative; }
+.frame { position: relative; margin: 0; overflow: hidden; border-radius: var(--radius-image); background: #171719; }
+.plainFrame { position: relative; margin: 0; }
+.media { object-fit: contain; }
+.plainMedia { object-fit: cover; }
+
+/* Desktop measures map directly to Figma 129:1569 at the 1344px content width. */
+.workflow { margin-top: 240px; }
+.s1Overview { width: 100%; aspect-ratio: 1344 / 757; margin-top: 64px; }
+.s1Map { width: 83.036%; aspect-ratio: 1116 / 750; margin-top: 69px; }
+.s1Pair { position: relative; height: 436px; margin-top: 88px; }
+.s1Small { position: absolute; top: 62px; left: 0; width: 40.625%; aspect-ratio: 546 / 312; }
+.s1Wide { position: absolute; top: 0; right: 0; width: 57.589%; aspect-ratio: 774 / 436; }
+.s1Centered { width: 66.071%; aspect-ratio: 888 / 500; margin: 38px auto 0; }
+.s1Centered + .s1Centered { aspect-ratio: 888 / 420; }
+
+.trust { margin-top: 266px; }
+.s2Overview { width: 100%; aspect-ratio: 1344 / 701; margin-top: 146px; }
+.s2Pair { position: relative; height: 732px; margin-top: 44px; }
+.s2Tall { width: 49.107%; aspect-ratio: 660 / 676; }
+.s2Wide { position: absolute; top: 102px; right: 0; width: 49.033%; aspect-ratio: 659 / 480; }
+.s2Map { width: 83.036%; aspect-ratio: 1116 / 737; margin-top: 44px; }
+.s2Cluster { position: relative; height: 989px; margin-top: 79px; }
+.s2Short { width: 49.107%; aspect-ratio: 660 / 444; }
+.s2Cluster > .s2Tall { position: absolute; top: 0; right: 0; width: 49.107%; }
+.s2Overlay { position: absolute; top: 477px; left: 0; width: 40.625%; aspect-ratio: 546 / 512; }
+.s2Final { width: 100%; aspect-ratio: 1344 / 603; margin-top: 55px; }
+
+.repeatability { margin-top: 194px; }
+.s3Overview { width: 100%; aspect-ratio: 1344 / 790; margin-top: 116px; }
+.s3TenColumns { width: 83.036%; aspect-ratio: 1116 / 425; margin-top: 57px; }
+.s3PairOne { position: relative; height: 532px; margin-top: 57px; }
+.s3Small { position: absolute; top: 49px; left: 0; width: 32.143%; aspect-ratio: 432 / 434; }
+.s3Wide { position: absolute; top: 0; right: 0; width: 66.071%; aspect-ratio: 888 / 532; }
+.s3PairOne + .s3Overview { margin-top: 57px; }
+.repeatability .s3Overview + .s3TenColumns { aspect-ratio: 1116 / 681; margin-top: 57px; }
+.s3PairTwo { display: grid; grid-template-columns: 57.589% 32.143%; gap: var(--gutter); margin-top: 47px; }
+.s3Left { aspect-ratio: 774 / 529; }
+.s3Right { aspect-ratio: 432 / 529; }
+.s3PairTwo + .s3TenColumns { aspect-ratio: 1116 / 686; margin: 45px auto 0; }
+.s3FinalWide { width: 100%; aspect-ratio: 1344 / 830; margin-top: 67px; }
+.s3Final { display: grid; grid-template-columns: 40.699% 57.589%; gap: var(--gutter); margin-top: 67px; }
+.s3Vertical { aspect-ratio: 547 / 718; }
+.s3LargeVertical { aspect-ratio: 774 / 1197; }
+
+@media (max-width: 767px) {
+  .workflow, .trust, .repeatability { margin-top: var(--space-case-rhythm-large); }
+  .s1Overview, .s2Overview, .s3Overview { margin-top: var(--space-case-rhythm-medium); }
+  .s1Map, .s2Map, .s3TenColumns { width: 100%; margin-top: var(--space-case-rhythm-small); }
+  .s1Pair, .s2Pair, .s2Cluster, .s3PairOne, .s3PairTwo, .s3Final { display: flex; height: auto; flex-direction: column; gap: var(--space-case-rhythm-small); margin-top: var(--space-case-rhythm-small); }
+  .s1Small, .s1Wide, .s2Tall, .s2Wide, .s2Short, .s2Overlay, .s3Small, .s3Wide, .s3Left, .s3Right, .s3Vertical, .s3LargeVertical { position: relative; top: auto; right: auto; left: auto; width: 100%; }
+  .s1Centered, .s2Final, .s3FinalWide { width: 100%; margin-top: var(--space-case-rhythm-small); }
+  .s1Centered + .s1Centered { margin-top: var(--space-case-rhythm-small); }
+  .s3PairOne + .s3Overview, .repeatability .s3Overview + .s3TenColumns, .s3PairTwo + .s3TenColumns { margin-top: var(--space-case-rhythm-small); }
+}

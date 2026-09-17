@@ -1,0 +1,14 @@
+.chapter { margin-top: var(--space-case-rhythm-large); }
+.media { display: grid; gap: var(--space-case-rhythm-small); margin-top: var(--space-case-rhythm-medium); }
+.row, .cluster { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--grid-gap); align-items: center; }
+.frame { min-width: 0; margin: 0; }
+.image { display: block; width: 100%; height: auto; border-radius: var(--radius-image); }
+
+/* The tall left panel spans both right-hand panels in the reference. */
+.cluster { align-items: start; row-gap: var(--space-case-rhythm-small); }
+.cluster .frame:first-child { grid-row: 1 / span 2; }
+
+@media (max-width: 767px) {
+  .row, .cluster { display: flex; flex-direction: column; gap: var(--space-case-rhythm-small); }
+  .frame { width: 100%; }
+}
