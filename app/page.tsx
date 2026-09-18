@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { ExperimentalHome } from '@/components/experimental-home'
 import { StructuredData } from '@/components/structured-data'
 import { homePageJsonLd, websiteJsonLd } from '@/lib/structured-data'
@@ -30,6 +30,12 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     images: [SITE_PREVIEW_IMAGE],
   },
+}
+
+export const viewport: Viewport = {
+  colorScheme: 'dark',
+  themeColor: '#151515',
+  userScalable: true,
 }
 
 export default function HomePage() {
