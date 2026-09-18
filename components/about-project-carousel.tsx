@@ -7,7 +7,13 @@ import { CASES, CASE_ORDER } from '@/lib/cases-data'
 import { withBasePath } from '@/lib/utils'
 import styles from './about-project-carousel.module.css'
 
-export function AboutProjectCarousel({ excludeSlug }: { excludeSlug?: string }) {
+export function AboutProjectCarousel({
+  excludeSlug,
+  spacious = false,
+}: {
+  excludeSlug?: string
+  spacious?: boolean
+}) {
   const railRef = useRef<HTMLDivElement>(null)
   const projects = CASE_ORDER
     .filter((slug) => slug !== excludeSlug)
@@ -230,7 +236,7 @@ export function AboutProjectCarousel({ excludeSlug }: { excludeSlug?: string }) 
   }, [])
 
   return (
-    <section className={styles.section} aria-labelledby="explore-projects-heading">
+    <section className={`${styles.section} ${spacious ? styles.sectionSpacious : ''}`} aria-labelledby="explore-projects-heading">
       <div className={styles.heading}>
         <h2 id="explore-projects-heading" data-scroll-reveal="copy" className="text-heading-lg text-ink">
           Explore projects

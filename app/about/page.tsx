@@ -39,8 +39,9 @@ export const metadata: Metadata = {
 }
 
 const BIO_PARAGRAPHS = [
-  'I\u2019m a product design leader with 20+ years of experience across product design, design direction, and digital transformation.',
-  'My work sits between strategy, UX, systems thinking, and hands-on design. I help teams turn technical possibilities, early ideas, and business goals into clearer products, workflows, and digital experiences.',
+  "I'm a product design leader with 20+ years of experience across product design, design direction, and digital transformation. My focus today is technical product design: AI and data products, expert workflows, ML tooling, platforms, and operational systems.",
+  'I work across the full arc of a product. I frame ambiguous problems, structure user workflows and information architecture, and turn that understanding into product direction, experience architecture, interaction models, prototypes, design systems, and shipped quality.',
+  'I work closely with engineers, data scientists, and domain experts. I bring the experience perspective to technical products: making capabilities understandable and useful, clarifying workflows and system boundaries, and designing the interactions through which people understand and act.',
   'Most recently, I worked as Design Director at Work & Co. and Principal Designer at McKinsey & Company / QuantumBlack, where I led product design for Kedro, an open-source Python framework for reproducible data science now part of the Linux Foundation AI & Data ecosystem.',
   'Earlier in my career, I worked with teams at TBWA\\Media Arts Lab, Wieden+Kennedy, Google Creative Lab, R/GA, Publicis Sapient, Songkick, and others across product, advertising, and creative technology.',
 ]
@@ -194,7 +195,7 @@ export default function AboutPage() {
 
       <Container className="pt-[var(--space-about-hero)]">
         <h1 data-scroll-reveal="headline" className="text-display max-w-[1116px] text-ink">
-          I design products for technical domains where AI, data, expert workflows, and complex systems need to become clear, trusted, and usable.
+          I design technical products where AI, data, and complex systems need to become clear, trustworthy, and usable.
         </h1>
 
         <section aria-label="Photo gallery" className="mt-[var(--space-case-rhythm-large)]">
@@ -270,9 +271,7 @@ export default function AboutPage() {
         </AboutRow>
       </Container>
 
-      <div className="pt-[var(--space-case-summary)]">
-        <AboutProjectCarousel />
-      </div>
+      <AboutProjectCarousel spacious />
 
       <SiteFooter />
     </main>
