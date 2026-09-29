@@ -19,8 +19,9 @@
 .railViewport {
   position: absolute;
   z-index: 1;
-  top: calc(var(--rail-inset-top) - var(--rail-edge-padding));
-  bottom: max(4rem, env(safe-area-inset-bottom));
+  /* The rail spans the full viewport so transparent edge chrome never clips media. */
+  top: 0;
+  bottom: 0;
   right: 0;
   left: 0;
   width: 100%;
@@ -45,7 +46,8 @@
   gap: 1.5rem;
   width: min(37rem, 48vw);
   margin: 0 auto;
-  padding-top: var(--rail-edge-padding);
+  /* Preserve the opening card position after making the scroll viewport full-height. */
+  padding-top: var(--rail-inset-top);
   padding-bottom: calc(var(--rail-edge-padding) * 2);
 }
 
@@ -170,6 +172,7 @@
 
 .topEdge {
   top: max(2.5rem, env(safe-area-inset-top));
+  background: transparent;
 }
 
 .bottomEdge {

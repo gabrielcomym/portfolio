@@ -12,7 +12,7 @@ export const GLOBAL_NAV_LINKS = [
  */
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 w-full bg-paper py-6 md:py-10">
+    <header className="sticky top-0 z-50 w-full bg-transparent py-6 md:py-10">
       <Container>
         <nav aria-label="Primary" className="flex items-start justify-between gap-8">
           <Link href="/" data-scroll-reveal="chrome" className="text-nav text-ink">
