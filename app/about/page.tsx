@@ -191,7 +191,7 @@ export default function AboutPage() {
     <main>
       <StructuredData data={profilePageJsonLd()} />
       <ScrollRevealController />
-      <SiteHeader />
+      <SiteHeader activeHref="/about" />
 
       <Container className="pt-[var(--space-about-hero)]">
         <h1 data-scroll-reveal="headline" className="text-display max-w-[1116px] text-ink">

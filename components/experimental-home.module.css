@@ -190,6 +190,10 @@
   transition: opacity 160ms ease;
 }
 
+.currentNavItem {
+  color: #8e8e8e;
+}
+
 .edgeLink:hover,
 .edgeLink:focus-visible {
   opacity: 0.55;

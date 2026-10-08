@@ -113,15 +113,19 @@ export function ExperimentalHome() {
         <Link href="/" className={styles.edgeLink}>Comym</Link>
         <nav aria-label="Primary" className={styles.primaryNav}>
           {GLOBAL_NAV_LINKS.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              target={link.external ? '_blank' : undefined}
-              rel={link.external ? 'noreferrer' : undefined}
-              className={styles.edgeLink}
-            >
-              {link.label}
-            </Link>
+            link.href === '/' ? (
+              <span key={link.label} aria-current="page" className={styles.currentNavItem}>{link.label}</span>
+            ) : (
+              <Link
+                key={link.label}
+                href={link.href}
+                target={link.external ? '_blank' : undefined}
+                rel={link.external ? 'noreferrer' : undefined}
+                className={styles.edgeLink}
+              >
+                {link.label}
+              </Link>
+            )
           ))}
         </nav>
       </header>

@@ -286,7 +286,11 @@ export function LabGallery({ images }: { images: string[] }) {
       <header className={styles.header}>
         <Link href="/" className={styles.edgeLink}>Comym</Link>
         <nav aria-label="Primary" className={styles.primaryNav}>
-          {GLOBAL_NAV_LINKS.map((link) => <Link key={link.label} href={link.href} className={styles.edgeLink} aria-current={link.href === '/lab' ? 'page' : undefined}>{link.label}</Link>)}
+          {GLOBAL_NAV_LINKS.map((link) => link.href === '/lab' ? (
+            <span key={link.label} aria-current="page" className={styles.currentNavItem}>{link.label}</span>
+          ) : (
+            <Link key={link.label} href={link.href} className={styles.edgeLink}>{link.label}</Link>
+          ))}
         </nav>
       </header>
       <div className={styles.bottom}>
