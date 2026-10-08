@@ -1,0 +1,207 @@
+{
+  "version": 1,
+  "project": "portfolio",
+  "tokenSources": [
+    "app/globals.css"
+  ],
+  "scan": [
+    "app",
+    "components"
+  ],
+  "watch": ["app", "components", "lib", "public"],
+  "geometry": {
+    "mobileBreakpoint": 768,
+    "desktop": { "carouselBelow": 400, "chapterBefore": 528, "chapterAfter": 433, "summaryBefore": 250, "summaryAfter": 250, "aboutBefore": 400 },
+    "mobile": { "carouselBelow": 240, "chapterBefore": 336, "chapterAfter": 240, "summaryBefore": 160, "summaryAfter": 160, "aboutBefore": 240 }
+  },
+  "externalVariables": [
+    "--font-dm-sans",
+    "--project-index"
+  ],
+  "shared": [
+    "app/layout.tsx",
+    "app/globals.css",
+    "components/site-header.tsx",
+    "components/site-footer.tsx",
+    "components/layout",
+    "components/page-transition.tsx",
+    "components/scroll-reveal.tsx",
+    "lib",
+    "package.json",
+    "pnpm-lock.yaml",
+    "next.config.mjs",
+    "postcss.config.mjs",
+    "tsconfig.json",
+    "public/site_preview.png"
+  ],
+  "components": [
+    {
+      "name": "SiteHeader",
+      "source": "components/site-header.tsx",
+      "api": "No visual override props; sticky transparent primary navigation",
+      "example": "<SiteHeader />",
+      "spacingOwner": "Header owns navigation padding, not scroll viewport clipping"
+    },
+    {
+      "name": "ExperimentalHome",
+      "source": "components/experimental-home.tsx",
+      "api": "No props; vertical native scroll rail",
+      "example": "<ExperimentalHome />",
+      "spacingOwner": "Rail owns initial card inset; viewport spans top=0/bottom=0 at every breakpoint"
+    },
+    {
+      "name": "CaseSectionIntro",
+      "source": "components/case-section-intro.tsx",
+      "api": "section: CaseSection; heading/details/optional ctaLabel",
+      "example": "<CaseSectionIntro section={chapter} />",
+      "spacingOwner": "Chapter owns before-title margin; intro owns title top/bottom padding and CTA gap"
+    },
+    {
+      "name": "CaseStudyPage summary",
+      "source": "app/case-studies/[slug]/page.tsx",
+      "api": "Known CASES slug only",
+      "example": "/case-studies/kedro/",
+      "spacingOwner": "Summary owns outer spacing; following carousel adds no top padding"
+    },
+    {
+      "name": "AboutProjectCarousel",
+      "source": "components/about-project-carousel.tsx",
+      "api": "excludeSlug?: string; spacious?: boolean",
+      "example": "<AboutProjectCarousel spacious /> on About; excludeSlug only on cases",
+      "spacingOwner": "400px desktop/240px mobile below; same above on About only"
+    }
+  ],
+  "exceptions": [
+    {
+      "scope": "components/*-case-sections.module.css",
+      "reason": "Approved media composition uses export-specific dimensions; raw values are not globally banned."
+    },
+    {
+      "scope": "app/globals.css",
+      "reason": "Next font variables supplied at runtime."
+    }
+  ],
+  "rules": [
+    {
+      "file": "components/site-header.tsx",
+      "mode": "require",
+      "text": "bg-transparent",
+      "reason": "Header must use the approved transparent surface"
+    },
+    {
+      "file": "components/site-header.tsx",
+      "mode": "forbid",
+      "text": "bg-paper",
+      "reason": "Opaque header override prohibited"
+    },
+    {
+      "file": "components/case-section-intro.tsx",
+      "mode": "require",
+      "text": "pb-[var(--space-case-section-title-bottom)]",
+      "reason": "Intro must consume semantic spacing token"
+    },
+    {
+      "file": "app/case-studies/[slug]/page.tsx",
+      "mode": "forbid",
+      "text": "<AboutProjectCarousel spacious",
+      "reason": "Case summary owns the upper gap; spacious would double it"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "home",
+      "kind": "home",
+      "path": "/",
+      "inputs": [
+        "app/page.tsx",
+        "components/experimental-home.tsx",
+        "components/experimental-home.module.css",
+        "public/media/thumbs home"
+      ]
+    },
+    {
+      "id": "about",
+      "kind": "about",
+      "path": "/about/",
+      "inputs": [
+        "app/about",
+        "components/about-project-carousel.tsx",
+        "components/about-project-carousel.module.css",
+        "public/media/about",
+        "public/media/thumbs home"
+      ]
+    },
+    {
+      "id": "kedro",
+      "kind": "case",
+      "path": "/case-studies/kedro/",
+      "inputs": [
+        "app/case-studies",
+        "components/kedro-case-sections.tsx",
+        "components/kedro-case-sections.module.css",
+        "components/case-section-intro.tsx",
+        "components/case-detail-panel.tsx",
+        "components/ui",
+        "components/project-hero.tsx",
+        "components/about-project-carousel.tsx",
+        "components/about-project-carousel.module.css",
+        "public/media/project/kedro",
+        "public/media/thumbs home"
+      ]
+    },
+    {
+      "id": "rivendell",
+      "kind": "case",
+      "path": "/case-studies/rivendell/",
+      "inputs": [
+        "app/case-studies",
+        "components/rivendell-case-sections.tsx",
+        "components/rivendell-case-sections.module.css",
+        "components/case-section-intro.tsx",
+        "components/case-detail-panel.tsx",
+        "components/ui",
+        "components/project-hero.tsx",
+        "components/about-project-carousel.tsx",
+        "components/about-project-carousel.module.css",
+        "public/media/project/rivendell",
+        "public/media/thumbs home"
+      ]
+    },
+    {
+      "id": "wovenlight",
+      "kind": "case",
+      "path": "/case-studies/wovenlight/",
+      "inputs": [
+        "app/case-studies",
+        "components/wovenlight-case-sections.tsx",
+        "components/wovenlight-case-sections.module.css",
+        "components/case-section-intro.tsx",
+        "components/case-detail-panel.tsx",
+        "components/ui",
+        "components/project-hero.tsx",
+        "components/about-project-carousel.tsx",
+        "components/about-project-carousel.module.css",
+        "public/media/project/wovenlight",
+        "public/media/thumbs home"
+      ]
+    },
+    {
+      "id": "performanceai",
+      "kind": "case",
+      "path": "/case-studies/performanceai/",
+      "inputs": [
+        "app/case-studies",
+        "components/performanceai-case-sections.tsx",
+        "components/performanceai-case-sections.module.css",
+        "components/case-section-intro.tsx",
+        "components/case-detail-panel.tsx",
+        "components/ui",
+        "components/project-hero.tsx",
+        "components/about-project-carousel.tsx",
+        "components/about-project-carousel.module.css",
+        "public/media/project/performanceai",
+        "public/media/thumbs home"
+      ]
+    }
+  ]
+}

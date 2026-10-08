@@ -8,6 +8,7 @@
 - Role: Product Design Leader
 - Expertise: product design, design direction, AI and machine-learning workflows, data products, technical and enterprise UX, systems thinking, product strategy, and creative technology.
 - About: https://comym.co/about/
+- Lab: https://comym.co/lab/ — an interactive gallery of visual work.
 - Contact: mailto:gabrielcomym@gmail.com
 - Insights: https://gabrielcomym.medium.com/
 
@@ -21,5 +22,6 @@
 ## Canonical resources
 
 - Homepage: https://comym.co/
+- Lab gallery: https://comym.co/lab/
 - Sitemap: https://comym.co/sitemap.xml
 - Extended portfolio content: https://comym.co/llms-full.txt

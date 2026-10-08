@@ -23,6 +23,12 @@ Most recently, Gabriel worked as Design Director at Work & Co. and Principal Des
 
 AI Awards; Fast Company Innovation by Design; D&AD; Cannes Lions; The FWA; Awwwards; The Webby Awards; Lovie Awards; Behance.
 
+## Lab
+
+URL: https://comym.co/lab/
+
+Lab is an interactive gallery of visual work. Visitors can explore the non-interactive floating image field by dragging or scrolling. The gallery makes no claims about the context or outcomes of individual images.
+
 ## Selected Work
 
 ### Kedro
@@ -100,6 +106,7 @@ PerformanceAI was adopted by machine-learning engineers across the Firm and appl
 ## Canonical resources
 
 - Homepage: https://comym.co/
+- Lab: https://comym.co/lab/
 - About: https://comym.co/about/
 - Contact: mailto:gabrielcomym@gmail.com
 - Insights: https://gabrielcomym.medium.com/

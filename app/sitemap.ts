@@ -7,6 +7,7 @@ export const dynamic = 'force-static'
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: canonicalUrl('/') },
+    { url: canonicalUrl('/lab/') },
     { url: canonicalUrl('/about/') },
     ...CASE_ORDER.map((slug) => ({ url: canonicalUrl(`/case-studies/${slug}/`) })),
   ]
